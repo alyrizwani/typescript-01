@@ -1,24 +1,49 @@
-<<<<<<< HEAD
-# typescript-01
-=======
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Ali Raza Portfolio
 
-# Run and deploy your AI Studio app
+A full-stack personal portfolio application built with React, Vite, TypeScript, Tailwind CSS, and Express.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/0b3d525e-b42f-4178-893b-985ed554755e
+- **Responsive Design**: Built with Tailwind CSS for a seamless experience on all devices.
+- **Frontend Components**: Hero, About, Skills, Experience, Projects, and Contact sections.
+- **Interactive Elements**: Uses `motion` and `lucide-react` for icons and animations.
+- **Contact Form Backend**: Express server with an embedded SQLite database (`better-sqlite3`) to handle and store contact form submissions securely.
 
-## Run Locally
+## Prerequisites
 
-**Prerequisites:**  Node.js
+- Node.js (v18 or higher recommended)
 
+## Quick Start
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
->>>>>>> f9d5080 (typescript project)
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   This will start both the Express backend and the Vite development server on `http://localhost:3000`.
+
+## Scripts
+
+- `npm run dev`: Starts the development server (`tsx server.ts`).
+- `npm run build`: Compiles the React application into the `dist` folder via Vite.
+- `npm run preview`: Previews the production build.
+- `npm run lint`: Runs TypeScript compiler for type-checking.
+- `npm run clean`: Removes the `dist` directory.
+
+## Architecture
+
+- `src/` - React frontend application files (components, styles, entry point).
+- `server.ts` - Express backend server that runs on port 3000, handles the `/api/contact` route, and seamlessly serves the Vite React app.
+- `messages.db` - SQLite database auto-generated to store contact form submissions.
+
+## Build for Production
+
+To build for production, compile the Vite app and set your environment appropriately:
+```bash
+npm run build
+```
+In a production setting (`NODE_ENV=production`), the `server.ts` script securely serves the static resources from the `dist/` directory built by Vite.
