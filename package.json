@@ -32,4 +32,15 @@
     "vite": "^6.2.0",
     "@types/express": "^4.17.21"
   }
+  {
+  "homepage": "https://alyrizwani.github.io/typescript-01",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
 }
+}
+
